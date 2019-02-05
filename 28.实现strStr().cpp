@@ -1,5 +1,10 @@
 class Solution {
 public:
+    /*
+    int strStr(string haystack, string needle) {
+            return haystack.find(needle);
+        }
+    */
     int strStr(string a, string b) {
         int lb = b.length();
         if (lb==0)
