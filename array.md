@@ -49,57 +49,6 @@ Concatenate
 Find    rfind
 Substring
 
-[实现strStr()](https://leetcode-cn.com/explore/learn/card/array-and-string/200/introduction-to-string/780/)
-```cpp
-int strStr(string haystack, string needle) {
-        return haystack.find(needle);
-    }
-```
-
-```cpp
-//BF
-int strStr(string a, string b) {
-    int lb = b.length();
-    if (lb==0)
-        return 0;
-    int la = a.length();
-    if (lb>la)
-        return -1;
-    bool flag;
-    for(int i=0; i<la-lb+1; i++){
-        flag = true;
-        for (int j=0; j<lb; j++){
-            if (a[i+j]!=b[j]){
-                flag = false;
-                break;
-            }
-        }
-        if(flag)
-            return i;
-    }
-    return -1;
-}
-//KMP, BM, Sunday
-```
-
-[最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/solution/)
-```cpp
-//v1 水平扫描法
-string longestCommonPrefix(vector<string>& strs) {
-    int ss = strs.size();
-    if(ss==0)
-        return "";
-    string re=strs[0];
-    for (auto i=1; i<ss; i++){
-        while (strs[i].find(re)!=0){
-            re = re.substr(0, re.length()-1);
-        }
-    }
-    return re;
-}
-//水平扫描、分治、二分查找
-```
-
 #### 双指针技巧 ####
 从两端向中间迭代数组。  一个指针从始端开始，而另一个指针从末端开始。
 两个不同步的指针。    同时有一个慢指针和一个快指针。    确定两个指针的移动策略。
