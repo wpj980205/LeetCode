@@ -53,39 +53,6 @@ Substring
 从两端向中间迭代数组。  一个指针从始端开始，而另一个指针从末端开始。
 两个不同步的指针。    同时有一个慢指针和一个快指针。    确定两个指针的移动策略。
 
-[两数之和 II - 输入有序数组](https://leetcode-cn.com/explore/learn/card/array-and-string/201/two-pointer-technique/785/)
-```cpp
-//v1
-vector<int> twoSum(vector<int>& numbers, int target) {
-    int idx1, idx2, s=numbers.size();
-    for (idx2=1; idx2<s; idx2++){
-        for (idx1=0; idx1<idx2; idx1++){
-            if (numbers[idx1]+numbers[idx2]==target){
-                return {idx1+1, idx2+1};
-            }
-        }
-    }
-    return {-1, -1};
-}
-```
-
-```cpp
-//v2, 更好
-vector<int> twoSum(vector<int>& numbers, int target) {
-    int idx1=0, idx2=numbers.size()-1 ,sum;
-    while (idx1<idx2){
-        sum=numbers[idx1]+numbers[idx2];
-        if(sum<target)
-            idx1++;
-        else if(sum>target)
-            idx2--;
-        else
-            return {idx1+1, idx2+1};
-    }
-    return {-1, -1};
-}
-```
-
 [移除元素](https://leetcode-cn.com/explore/learn/card/array-and-string/201/two-pointer-technique/787/)
 ```cpp
 //v1
