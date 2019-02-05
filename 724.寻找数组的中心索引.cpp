@@ -1,15 +1,18 @@
 class Solution {
 public
     int pivotIndex(vector<int>& nums) {
-        int a, b, s=nums.size();
-        for(int i=0; i<s; i++){
-            a=0;
-            b=0;
-            for(int j=0; j<i; j++)
-                a+=nums[j];
-            for(int j=i+1; j<s; j++)
-                b+=nums[j];
-            if(a==b)
+        int s1=0, s2=0, s=nums.size();
+        if(s==0)
+            return -1;
+        for(int i=1; i<s; ++i){
+            s2+=nums[i];
+        }
+        if(s2==0)
+            return 0;
+        for(int i=1; i<s; ++i){
+            s1+=nums[i-1];
+            s2-=nums[i];
+            if(s1==s2)
                 return i;
         }
         return -1;
