@@ -1,5 +1,5 @@
 class Solution {
-public
+public:
     int pivotIndex(vector<int>& nums) {
         int s1=0, s2=0, s=nums.size();
         if(s==0)
