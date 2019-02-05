@@ -53,38 +53,6 @@ Substring
 从两端向中间迭代数组。  一个指针从始端开始，而另一个指针从末端开始。
 两个不同步的指针。    同时有一个慢指针和一个快指针。    确定两个指针的移动策略。
 
-[反转字符串](https://leetcode-cn.com/explore/learn/card/array-and-string/201/two-pointer-technique/783/)
-```cpp
-//v1 双指针
-void swap(char& a, char& b){
-    char c=a;
-    a=b;
-    b=c;
-}
-
-void reverseString(vector<char>& s) {
-    int i = 0;
-    int j = s.size()-1;
-    while (i < j) {
-        swap(s[i], s[j]);
-        i++;
-        j--;
-    }
-}
-```
-
-[数组拆分 I](https://leetcode-cn.com/explore/learn/card/array-and-string/201/two-pointer-technique/784/)
-```cpp
-//v1
-int arrayPairSum(vector<int>& nums) {
-    sort(nums.begin(), nums.end());
-    int re=0, ss=nums.size();
-    for (int i=0; i<ss; i+=2)
-        re+=nums[i];
-    return re;
-}
-```
-
 [两数之和 II - 输入有序数组](https://leetcode-cn.com/explore/learn/card/array-and-string/201/two-pointer-technique/785/)
 ```cpp
 //v1
