@@ -1,9 +1,9 @@
 class Solution {
 public:
     void reverseWords(string &s) {
-        s+=" ";
+        s+=" ";    //为方便处理，加入尾部空格
         for(int i=s.find("  "); i!=std::string::npos; i=s.find("  "))
-            s.erase(s.begin()+i);
+            s.erase(s.begin()+i);    //消除多余空格
         vector<string> vs;
         for(int i=s.find(" "); i!=std::string::npos; i=s.find(" ")){
             vs.push_back(s.substr(0,i));
@@ -15,6 +15,6 @@ public:
             s+=" ";
         }
         while(*(s.end()-1)==' ')
-            s.erase(s.end()-1);
+            s.erase(s.end()-1);    //消除尾部空格
     }
 };
